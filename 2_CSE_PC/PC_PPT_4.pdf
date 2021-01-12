@@ -1,0 +1,266 @@
+1.#!/bin/bash
+echo "Printing text with newline"
+echo -n "Printing text without newline"
+echo -e "\nRemoving \t backslash \t characters\n"
+
+2.#!/bin/bash
+
+# Add two numeric value
+((sum=25+35))
+
+#Print the result
+echo $sum
+
+3.#!/bin/bash
+: '
+The following script calculates
+the square value of the number, 5.
+'
+((area=5*5))
+echo $area
+4.#!/bin/bash
+valid=true
+count=1
+while [ $valid ]
+do
+echo $count
+if [ $count -eq 5 ];
+then
+break
+fi
+((count++))
+done
+5.#!/bin/bash
+for (( counter=10; counter>0; counter-- ))
+do
+echo -n "$counter "
+done
+printf "\n"
+6.#!/bin/bash
+echo "Enter Your Name"
+read name
+echo "Welcome $name to LinuxHint"
+7.#!/bin/bash
+n=10
+if [ $n -lt 10 ];
+then
+echo "It is a one digit number"
+else
+echo "It is a two digit number"
+fi
+8.!/bin/bash
+
+echo "Enter username"
+read username
+echo "Enter password"
+read password
+
+if [[ ( $username == "admin" && $password == "secret" ) ]]; then
+echo "valid user"
+else
+echo "invalid user"
+fi
+9.#!/bin/bash
+
+echo "Enter any number"
+read n
+
+if [[ ( $n -eq 15 || $n  -eq 45 ) ]]
+then
+echo "You won the game"
+else
+echo "You lost the game"
+fi
+10.#!/bin/bash
+
+echo "Enter your lucky number"
+read n
+
+if [ $n -eq 101 ];
+then
+echo "You got 1st prize"
+elif [ $n -eq 510 ];
+then
+echo "You got 2nd prize"
+elif [ $n -eq 999 ];
+then
+echo "You got 3rd prize"
+
+else
+echo "Sorry, try for the next time"
+fi
+11.#!/bin/bash
+
+echo "Enter your lucky number"
+read n
+case $n in
+101)
+echo echo "You got 1st prize" ;;
+510)
+echo "You got 2nd prize" ;;
+999)
+echo "You got 3rd prize" ;;
+*)
+echo "Sorry, try for the next time" ;;
+esac
+12.#!/bin/bash
+echo "Total arguments : $#"
+echo "1st Argument = $1"
+echo "2nd argument = $2"
+13.#!/bin/bash
+
+string1="Linux"
+string2="Hint"
+echo "$string1$string2"
+string3=$string1+$string2
+string3+=" is a good tutorial blog site"
+echo $string3
+14.#!/bin/bash
+Str="Learn Linux from LinuxHint"
+subStr=${Str:6:5}
+echo $subStr
+15.#!/bin/bash
+echo "Enter first number"
+read x
+echo "Enter second number"
+read y
+(( sum=x+y ))
+echo "The result of addition=$sum"
+17.#!/bin/bash
+ 
+# Works as string
+expr '10 + 30'
+ 
+# Works as string
+expr 10+30
+ 
+#Perform the addition
+expr 10 + 30
+ 
+#Find out the remainder value
+expr 30 % 9
+ 
+#Using expr with backtick
+myVal1=`expr 30 / 10`
+echo $myVal1
+ 
+#Using expr within command substitute
+myVal2=$( expr 30 - 10 )
+echo $myVal2
+18.#!/bin/bash
+ 
+# Multiplying 9 by 3
+let val1=9*3
+echo $val1
+ 
+# Dividing 8 by 3
+let "val2 = 8 / 3"
+echo $val2
+ 
+# Subtracting 3 from 9
+let val3=9-3
+echo $val3
+ 
+# Applying increment
+let val4=7
+let val4++
+echo $val4
+ 
+# Using argument value in arithmetic operation
+let "val5=50+$1"
+echo $val5
+19.#!/bin/bash
+ 
+
+20.#!/bin/bash
+ 
+# Dividing 55 by 3 with bc only
+echo "55/3" | bc
+ 
+# Dividing 55 by 3 with bc and -l option
+echo "55/3" | bc -l
+ 
+# Dividing 55 by 3 with bc and scale value
+echo "scale=2; 55/3" | bc
+16.#!/bin/bash
+function F1()
+{
+echo 'I like bash programming'
+}
+
+F1
+17.#!/bin/bash
+
+Rectangle_Area() {
+area=$(($1 * $2))
+echo "Area is : $area"
+}
+
+Rectangle_Area 10 20
+18.#!/bin/bash
+function greeting() {
+
+str="Hello, $name"
+echo $str
+
+}
+
+echo "Enter your name"
+read name
+
+val=$(greeting)
+echo "Return value of the function is $val"
+19. #!/bin/bash
+echo "Enter directory name"
+read newdir
+`mkdir $newdir`
+20.#!/bin/bash
+echo "Enter directory name"
+read ndir
+if [ -d "$ndir" ]
+then
+echo "Directory exist"
+else
+`mkdir $ndir`
+echo "Directory created"
+fi
+21.#!/bin/bash
+file='book.txt'
+while read line; do
+echo $line
+done < $file
+22.#!/bin/bash
+echo "Enter filename to remove"
+read fn
+rm -i $fn
+23.#!/bin/bash
+
+echo "Before appending the file"
+cat book.txt
+
+echo "Learning Laravel 5">> book.txt
+echo "After appending the file"
+cat book.txt
+24.#!/bin/bash
+filename=$1
+if [ -f "$filename" ]; then
+echo "File exists"
+else
+echo "File does not exist"
+fi
+25.#!/bin/bash
+Year=`date +%Y`
+Month=`date +%m`
+Day=`date +%d`
+Hour=`date +%H`
+Minute=`date +%M`
+Second=`date +%S`
+echo `date`
+echo "Current Date is: $Day-$Month-$Year"
+echo "Current Time is: $Hour:$Minute:$Second"
+26.#!/bin/bash
+echo "Wait command" &
+process_id=$!
+wait $process_id
+echo "Exited with status $?"
+27.
